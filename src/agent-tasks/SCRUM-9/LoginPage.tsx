@@ -5,16 +5,34 @@ const LoginPage: React.FC = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!username || !password) {
       setError('Please enter both username and password.');
       return;
     }
     setError('');
-    // In a real application, you would send this to an authentication API
-    console.log('Attempting to log in with:', { username, password });
-    alert('Login attempt with: ' + username);
+
+    // In a real application, you would send this to a secure authentication API.
+    // This is a placeholder for demonstration purposes.
+    console.log('Attempting to log in...');
+    try {
+      // Simulate API call
+      const response = await new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (username === 'user' && password === 'password') {
+            resolve({ success: true, message: 'Login successful!' });
+          } else {
+            reject({ success: false, message: 'Invalid username or password.' });
+          }
+        }, 1000);
+      });
+      console.log(response); // In a real app, handle successful login (e.g., redirect)
+      alert('Login successful!');
+    } catch (err: any) {
+      setError(err.message);
+      console.error('Login failed:', err.message);
+    }
   };
 
   return (
