@@ -6,6 +6,7 @@ This task involves creating a basic, static website for a school using React and
 
 *   `src/agent-tasks/SCRUM-8/SchoolWebsite.tsx`: This is the main React component for the school website. It includes a header with navigation, a hero section, and several information sections (About Us, Admissions, Contact).
 *   `src/agent-tasks/SCRUM-8/SchoolWebsite.css`: This file contains the CSS styles for the `SchoolWebsite.tsx` component, providing a clean and responsive design.
+*   `src/agent-tasks/SCRUM-8/SchoolWebsite.test.tsx`: This file contains basic tests for the `SchoolWebsite` component.
 
 ## Usage (Example):
 
